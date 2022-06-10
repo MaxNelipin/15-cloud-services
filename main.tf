@@ -7,6 +7,11 @@ provider "yandex" {
   zone      = "ru-central1-a"
 }
 
+locals {
+  folder_id = "b1gpooj85mh91so024vc"
+}
+
+
 # Создание отдельного VPC и папки
 resource "yandex_resourcemanager_cloud" "vpc-15" {
   name = "vpc-15"
