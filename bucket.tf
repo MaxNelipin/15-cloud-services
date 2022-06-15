@@ -22,6 +22,16 @@ resource "yandex_storage_bucket" "bucket-netology" {
   secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
   bucket = "bucket-netology"
 
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        kms_master_key_id = yandex_kms_symmetric_key.kms-bucket.id
+        sse_algorithm     = "aws:kms"
+      }
+    }
+  }
+
+
 }
 
 resource "yandex_storage_object" "picture_15_2" {

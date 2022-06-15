@@ -56,7 +56,7 @@ resource "yandex_compute_instance_group" "group-15-2" {
 
   scale_policy {
     fixed_scale {
-      size = 3
+      size = 0
     }
   }
 
