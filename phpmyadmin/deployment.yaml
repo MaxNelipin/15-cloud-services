@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin
+  namespace: default
+spec:
+  ports:
+    - name: web
+      port: 8080
+      targetPort: 80
+  selector:
+    app: phpmyadmin
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: phpmyadmin
+  namespace: default
+  name: phpmyadmin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+      - image: phpmyadmin
+        imagePullPolicy: IfNotPresent
+        name: phpmyadmin
+        ports:
+          - containerPort: 80
+        env:
+          - name: PMA_HOST
+            value: "rc1a-is462c4n3lo584qt.mdb.yandexcloud.net"
+          - name: PMA_USER
+            value: "netology_user"
+          - name: PMA_PASSWORD
+            value: "p@ssw)rd00000"

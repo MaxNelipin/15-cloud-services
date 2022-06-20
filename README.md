@@ -46,4 +46,42 @@
 
 ![img_10.png](img_10.png)
 
+## 15.4  Кластеры и ресурсы под управлением облачных провайдеров
+
+Кластер mysql
+
+![img_11.png](img_11.png)
+
+Хосты кластера
+
+![img_12.png](img_12.png)
+
+База данных
+
+![img_13.png](img_13.png)
+
+Результат создания кластера kubernetes
+
+![img_14.png](img_14.png)
+
+Группа узлов
+
+![img_15.png](img_15.png)
+
+Подключение через kubectl
+
+![img_16.png](img_16.png)
+
+Развёрнутый phpmyadmin
+
+![img_17.png](img_17.png)
+
+Loadbalancer
+
+![img_18.png](img_18.png)
+
+Подключение к базе через phpmyadmin
+
+![img_19.png](img_19.png)
+
 
